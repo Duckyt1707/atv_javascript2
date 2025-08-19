@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Validador de Senha</title>
+</head>
+<body>
+  <h2>Validador de Senha</h2>
+  <input type="password" id="senha" placeholder="Digite sua senha">
+  <button onclick="validarSenha()">Verificar</button>
+  
+  <p id="resultado"></p>
+
+  <script>
+    function validarSenha() {
+      let senha = document.getElementById("senha").value;
+      let forca = "Senha Fraca";
+
+      // Expressões regulares pra verificar número e caractere especial
+      let temNumero = /[0-9]/.test(senha);
+      let temEspecial = /[!@#$%&*]/.test(senha);
+
+      if (senha.length < 8) {
+        forca = "Senha Fraca";
+      } else if (senha.length >= 8 && temNumero && !temEspecial) {
+        forca = "Senha Média";
+      } else if (senha.length >= 8 && temNumero && temEspecial) {
+        forca = "Senha Forte";
+      }
+
+      document.getElementById("resultado").innerText = "Força da senha: " + forca;
+    }
+  </script>
+</body>
+</html>
