@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>// Criando o array com 10 números (positivos e negativos)
+let numeros = [15, -7, 2, 45, -10, 0, 3, 50, -8, 11];
+
+// Variáveis de controle
+let somaDosPares = 0;
+let contadorDeImpares = 0;
+
+// Inicializando maior e menor número com o primeiro valor do array
+let maiorNumero = numeros[0];
+let menorNumero = numeros[0];
+
+// Loop para percorrer o array
+for (let numero of numeros) {
+  
+  // Verificando se é par ou ímpar
+  if (numero % 2 === 0) {
+    somaDosPares += numero;  // se for par, soma
+  } else {
+    contadorDeImpares++;     // se for ímpar, incrementa o contador
+  }
+
+  // Verificando maior e menor número
+  if (numero > maiorNumero) {
+    maiorNumero = numero;
+  }
+
+  if (numero < menorNumero) {
+    menorNumero = numero;
+  }
+}
+
+// Exibindo os resultados no console
+console.log("=== Resultados da Análise do Array ===");
+console.log("Soma dos números pares:", somaDosPares);
+console.log("Quantidade de números ímpares:", contadorDeImpares);
+console.log("Maior número encontrado:", maiorNumero);
+console.log("Menor número encontrado:", menorNumero);
+</script>
+</body>
+</html>
