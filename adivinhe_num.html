@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Função que gera um número aleatório entre 1 e 100
+function gerarNumeroAleatorio() {
+  return Math.floor(Math.random() * 100) + 1;
+}
+
+// Número secreto que o jogador tem que adivinhar
+let numeroSecreto = gerarNumeroAleatorio();
+
+// Variável para armazenar a tentativa do usuário
+let tentativa = 0;
+
+// Loop até o usuário acertar
+while (tentativa !== numeroSecreto) {
+  // Pede a tentativa do usuário
+  tentativa = parseInt(prompt("Adivinhe o número (entre 1 e 100):"));
+
+  if (tentativa > numeroSecreto) {
+    alert("Muito alto! Tente novamente.");
+  } else if (tentativa < numeroSecreto) {
+    alert("Muito baixo! Tente novamente.");
+  } else if (tentativa === numeroSecreto) {
+    alert("🎉 Parabéns! Você acertou o número secreto!");
+  } else {
+    alert("Digite um número válido!");
+  }
+}
+
+    </script>
+</body>
+</html>
