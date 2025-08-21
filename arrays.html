@@ -15,17 +15,14 @@ let contadorDeImpares = 0;
 let maiorNumero = numeros[0];
 let menorNumero = numeros[0];
 
-// Loop para percorrer o array
 for (let numero of numeros) {
-  
-  // Verificando se é par ou ímpar
+    
   if (numero % 2 === 0) {
-    somaDosPares += numero;  // se for par, soma
+    somaDosPares += numero; 
   } else {
-    contadorDeImpares++;     // se for ímpar, incrementa o contador
+    contadorDeImpares++;  
   }
 
-  // Verificando maior e menor número
   if (numero > maiorNumero) {
     maiorNumero = numero;
   }
